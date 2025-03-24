@@ -22,4 +22,20 @@ def login(request):
     else:
         return render(request,'pages/login.html')
 
-
+def register(request):
+    
+    if request.method == 'POST':
+         usuario = request.POST['usuario']    
+         email = request.POST['email']    
+         senha = request.POST['senha']    
+         confirmar_senha = request.POST['confirmar_senha']    
+        
+         User.objects.create_user(
+            username=usuario,
+            email=email,
+            password=senha
+        
+        )
+         return redirect('login')
+    else:
+        return render(request, 'pages/register.html')

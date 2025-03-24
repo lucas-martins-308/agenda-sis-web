@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+
+        <input type="text" placeholder="Usuário" name="usuario" >
+        <input type="email" placeholder="Email" name="email" >
+        <input type="password" placeholder="Senha" name="senha" >
+        <input type="password" placeholder="Confirme sua senha" name="confirmar_senha" >
+
+
+        <button type="submit">Cadastrar</button>
+
+    </form>
+    
+</body>
+</html>
